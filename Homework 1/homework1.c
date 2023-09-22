@@ -26,7 +26,13 @@ int Empty(node list){
 	return list == NULL;
 }
 
-void addnew(node* head, user x){
+/**
+ * @function Add_New: add a new node to the list when list is empty
+ * 
+ * @param head: head of list
+ * @param x: node to add
+*/
+void Add_New(node* head, user x){
     struct Node* p = (struct Node*)malloc(sizeof(struct Node));
     p->data = x;
     p->next = NULL;
@@ -43,7 +49,7 @@ void addnew(node* head, user x){
 */
 void Add(node* head, user x){
     if(Empty(*head)){
-        addnew(head, x);
+        Add_New(head, x);
     }else{
         struct Node* a = *head;
         while(a->next != NULL){
@@ -88,33 +94,43 @@ int checkLogin(node head, char username[]){
     return check;
 }
 
+/**
+ * @function log_acctions: Record activity log with format [dd/mm/yyyy hh:mm:ss] $ choose $ string_input $ status
+ * 
+ * @param choose: selection of activity
+ * @param string_input: User-provided value
+ * @param status: result of activity
+*/
 void log_acctions(int choose, char string_input[255], char status[5]){
-    time_t rawtime;
+    time_t rawtime; //Change to Local Timezone
    struct tm *info;
    char buffer[20];
-   time( &rawtime );
-   info = localtime( &rawtime );
-   strftime(buffer,80,"%d/%m/%Y %X", info);
+   time( &rawtime ); //Get current time and save to rawtime
+   info = localtime( &rawtime ); //Convert rawtime to local time information
+   strftime(buffer,80,"%d/%m/%Y %X", info); //Save to string
 
     FILE *fl;
     fl = fopen("log_20204990.txt", "a+");
+
     if(fl == NULL){
-        printf("Error opening file\n");
+        printf("Error opening file log_20204990.txt\n");
         exit(1);
     }
+
     fprintf(fl, "[%s] $ %d $ %s $ %s\n", buffer, choose, string_input, status);
+
     fclose(fl);
 }
 
 int main(){
-    node l = NULL;
-    user x;
-    char str[255];
+    node l = NULL; // initialize the node
+    user x; // initialize the user variable
+    char str[255]; // initialize the string variable to read file
     FILE *fp;
     fp = fopen("account.txt", "r");
 
     if(fp == NULL){
-        printf("Can not open file account.txt!!!");
+        printf("Error opening file account.txt!!!\n");
         exit(1);
     }
     
@@ -124,10 +140,11 @@ int main(){
 		}
         
     }
+
     fclose(fp);
 
-    int choose;
-    int login_status = 0;
+    int choose; // initialize variables to select the action
+    int login_status = 0; //initialize variables for login status
     do
     {   
     	printf("1. Login\n");
@@ -175,16 +192,17 @@ int main(){
         case 2:{
             char message[255];
 			printf("Message: ");
-            fflush(stdin);
-            fgets(message, 255, stdin);
+            fflush(stdin); // flush std out before reading string from keyboard
+            fgets(message, 255, stdin); //get message
             size_t len = strlen(message);
+            //delete character '\n' from message
             if (len > 0 && message[len - 1] == '\n') {
                 message[len - 1] = '\0';
             }
             printf("\n");
             if(login_status == 0){
                 char status[] = "-ERR";
-                printf("You have not logged in yet\n\n");
+                printf("You have not logged.\n\n");
                 log_acctions(choose, message, status);
                 break;
             }
@@ -205,7 +223,7 @@ int main(){
             }
             if(login_status == 0){
                 char status[] = "-ERR";
-                printf("You have not logged in yet\n\n");
+                printf("You have not logged.\n\n");
                 log_acctions(choose, "", status);
                 break;
             }
@@ -213,11 +231,6 @@ int main(){
 
         case 4:
             break;
-
-        default:{
-            printf("You only can choose 1 or 2 or 3 or 4!!!!!\n\n");
-            break;
-        }
         }
     } while (choose != 4);
     
