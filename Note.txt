@@ -1,0 +1,5 @@
+- LECTURE 2:
+	+ Server cần địa chỉ xác định: địa chỉ IP hoặc tên miền hoặc cả 2.
+	+ Luôn chỉ ra địa chỉ truyền khi sử dụng UDP Socket, dùng 1 Socket để truyền tới nhiều tiến trình khác
+	+ Sử dụng TCP Socket khi cần trao đổi nhiều Socket, không cần chỉ ra địa chỉ truyền. Vì HDH quản lý đã biết rồi.
+	

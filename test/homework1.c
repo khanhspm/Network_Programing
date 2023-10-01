@@ -10,8 +10,65 @@
 #include<string.h>
 #include<stdlib.h>
 #include<time.h>
-#include"liblist.h"
 
+struct User{
+    char username[255];
+    int banned;
+};
+typedef struct User user;
+
+struct Node{
+	user data;
+	struct Node *next;
+};
+typedef struct Node* node;
+
+/**
+ * @function checkEmptyList: checking list of nodes is NULL
+ * 
+ * @param list: list of nodes to check
+ * 
+ * @return: empty list
+*/
+int checkEmptyList(node list){
+	return list == NULL;
+}
+
+/**
+ * @function addNewNode: add a new node to the list when list is empty
+ * 
+ * @param head: head of list
+ * @param x: node to add
+*/
+void addNewNode(node* head, user x){
+    struct Node* p = (struct Node*)malloc(sizeof(struct Node));
+    p->data = x;
+    p->next = NULL;
+    if(checkEmptyList(*head)){
+        *head = p;
+    }
+}
+
+/**
+ * @function addNode: add a node to the list
+ * 
+ * @param head: head of list
+ * @param x: node to add
+*/
+void addNode(node* head, user x){
+    if(checkEmptyList(*head)){
+        addNewNode(head, x);
+    }else{
+        struct Node* a = *head;
+        while(a->next != NULL){
+            a = a->next;
+        }
+        struct Node* p = (struct Node*)malloc(sizeof(struct Node));
+        p->data = x;
+        p->next = NULL;
+        a->next = p;
+    }
+}
 
 /**
  * @function checkLogin: checking account exist and is bannedned.
@@ -96,8 +153,6 @@ int main(){
 
     int choose; // initialize variables to select the action
     int login_status = 0; //initialize variables for login status
-    char err[] = "-ERR";
-    char oke[] = "+OK";
     do
     {   
     	printf("1. Login\n");
@@ -114,25 +169,29 @@ int main(){
             scanf("%s", username);
             printf("\n");
             if(login_status == 1){
+                char status[] = "-ERR";
                 printf("You have already logged in\n\n");
-                saveLog(choose, username, err);
+                saveLog(choose, username, status);
                 break;
             }
             if(login_status == 0){
                 if(checkLogin(l, username) == 0){
+                    char status[] = "-ERR";
                     printf("Account is not exist\n\n");
-                    saveLog(choose, username, err);
+                    saveLog(choose, username, status);
                     break;
                 }
                 if(checkLogin(l, username) == 1){
+                    char status[] = "-ERR";
                     printf("Account is banned\n\n");
-                    saveLog(choose, username, err);
+                    saveLog(choose, username, status);
                     break;
                 }
                 if(checkLogin(l, username) == 2){
                     login_status=1;
+                    char status[] = "+OK";
                     printf("Hello %s\n\n", username);
-                    saveLog(choose, username, oke);
+                    saveLog(choose, username, status);
                     break;
                 }
             }
@@ -150,26 +209,30 @@ int main(){
             }
             printf("\n");
             if(login_status == 0){
+                char status[] = "-ERR";
                 printf("You have not logged.\n\n");
-                saveLog(choose, message, err);
+                saveLog(choose, message, status);
                 break;
             }
             if(login_status == 1){
+                char status[] = "+OK";
                 printf("Successful post\n\n");
-                saveLog(choose, message, oke);
+                saveLog(choose, message, status);
                 break;
             }
         }
         case 3:{
             if(login_status == 1){
                 login_status--;
+                char status[] = "+OK";
                 printf("Successful logged out\n\n");
-                saveLog(choose,"", oke);
+                saveLog(choose,"", status);
                 break;
             }
             if(login_status == 0){
+                char status[] = "-ERR";
                 printf("You have not logged.\n\n");
-                saveLog(choose, "", err);
+                saveLog(choose, "", status);
                 break;
             }
         }
