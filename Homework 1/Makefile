@@ -1,13 +1,24 @@
+# Makefile for project
+
+# Name of output file
+OUTPUT = homework1
+
+# List file .c
+SRCS = main.c void.c
+
+# List file .h 
+HEADERS = liblist.h
+
+# Compiler
 CC = gcc
-CFLAGS = -c -Wall
 
-all: homework1
+# Flags for compiler
+CFLAGS = -I./ -lm
 
-homework1: homework1.o
-	${CC} homework1.o -o homework1
+# Rules for compiler
+$(OUTPUT): $(SRCS) $(HEADERS)
+	$(CC) -o $(OUTPUT) $(SRCS) $(CFLAGS)
 
-homework1.o: homework1.c
-	${CC} ${CFLAGS} homework1.c
-
+# Delete files that are not in the main
 clean:
-	rm -f *.o *~
+	rm -f $(OUTPUT) *.exe

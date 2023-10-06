@@ -3,3 +3,20 @@
 	+ Luôn chỉ ra địa chỉ truyền khi sử dụng UDP Socket, dùng 1 Socket để truyền tới nhiều tiến trình khác
 	+ Sử dụng TCP Socket khi cần trao đổi nhiều Socket, không cần chỉ ra địa chỉ truyền. Vì HDH quản lý đã biết rồi.
 	
+- Lecture 3:
+	+ Không cần hàm bind() trên client
+	+ byte ordering: - little-edian : byte cao thì lưu trữ ở địa chỉ A+1, thấp là A.
+			 - big-edian: byte cao thì lưu trữ ở địa chỉ A, thấp là A+1.
+	+ IPv4, IPv6: chuyển đổi giá trị xâu sang nhị phân
+	+ AF_INET: Định nghĩa cho giao thức IPv4
+	+ AF_INET6: ĐỊnh nghĩa IPv6
+	+ ko dùng inet_ntoa(): lỗi bảo mật 
+	+ ko dùng gethostbyaddr(), gethostbyname()
+	+ khi gọi function thì sockaddr_in -> sockaddr
+	+ khi function trả về thì sockaddr->sockaddr_in
+	+ sockaddr_in: - ai_family : AF_INET, AF_UNSPEC
+			- sin_addr: inet_pton (xâu->number)
+				    inet_ntop (number->xâu)
+			- s_addr: inet_addr()
+			- sin_port: lấy vào: htons()
+				    lấy ra: ntohs()
