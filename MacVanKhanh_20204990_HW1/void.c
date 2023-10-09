@@ -5,6 +5,15 @@
 #include"liblist.h"
 
 /**
+* @funtion clearInputString: Remove any redundant data from stdin
+*/
+
+void clearInputString(){
+    int c;
+    while((c = getchar()) != '\n' && c != EOF);
+}
+
+/**
  * @function checkLogin: checking account exist and is bannedned.
  * 
  * @param username: A input string.
@@ -43,7 +52,7 @@ int checkLogin(node head, char username[]){
  * @param string_input: User-provided value
  * @param status: result of activity
 */
-void saveLog(int choose, char string_input[255], char status[5]){
+void saveLog(int choose, char *string_input, char *status){
     time_t rawtime; //Change to Local Timezone
    struct tm *info;
    char buffer[20];
@@ -134,10 +143,10 @@ void display(){
         }
 
         case 2:{
-            char message[255];
 			printf("Message: ");
-            fflush(stdin); // flush std out before reading string from keyboard
-            fgets(message, 255, stdin); //get message
+            char message[255];
+            clearInputString();
+            fgets(message, sizeof(message), stdin); //get message
             size_t len = strlen(message);
             //delete character '\n' from message
             if (len > 0 && message[len - 1] == '\n') {
@@ -170,6 +179,8 @@ void display(){
         }
 
         case 4:
+            printf("You exit success!!\n\n");
+            saveLog(choose, "", oke);
             break;
 
         }
