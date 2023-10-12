@@ -20,3 +20,5 @@
 			- s_addr: inet_addr()
 			- sin_port: lấy vào: htons()
 				    lấy ra: ntohs()
+	
+	+ struct sockaddr_in: 
