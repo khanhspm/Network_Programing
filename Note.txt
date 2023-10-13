@@ -22,3 +22,6 @@
 				    lấy ra: ntohs()
 	
 	+ struct sockaddr_in: 
+	
+- Lecture 4:
+	+ recvfrom(): là hàm thông thường
