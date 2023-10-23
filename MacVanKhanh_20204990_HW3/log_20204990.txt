@@ -1,0 +1,10 @@
+[21/10/2023 18:05:02] $ 8.8.8.8 $ +dns.google
+[21/10/2023 18:05:09] $ dns.google $ +8.8.8.8 8.8.4.4 
+[21/10/2023 18:05:11] $ gfwisghi $ -Not found information
+[21/10/2023 18:05:17] $ 256.66.66.66 $ -Not found information
+[21/10/2023 18:05:19] $ ghwiuorgh $ -Not found information
+[21/10/2023 18:05:23] $ hwriutgh $ -Not found information
+[21/10/2023 18:05:30] $ google.com $ +142.250.207.78 
+[21/10/2023 18:05:38] $ facebook.com $ +31.13.75.35 
+[21/10/2023 18:10:06] $ 8.8.8.8 $ +dns.google
+[21/10/2023 18:10:45] $ dns.google $ +8.8.4.4 8.8.8.8 
