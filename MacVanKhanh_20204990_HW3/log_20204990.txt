@@ -8,3 +8,7 @@
 [21/10/2023 18:05:38] $ facebook.com $ +31.13.75.35 
 [21/10/2023 18:10:06] $ 8.8.8.8 $ +dns.google
 [21/10/2023 18:10:45] $ dns.google $ +8.8.4.4 8.8.8.8 
+[26/10/2023 15:37:50] $ iwfiw $ -Not found information
+[26/10/2023 15:37:53] $ fiwf $ -Not found information
+[26/10/2023 15:37:56] $ fhiuewf $ -Not found information
+[26/10/2023 15:40:33] $ 1.1.1.1 $ +one.one.one.one

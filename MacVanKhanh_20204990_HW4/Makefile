@@ -1,15 +1,12 @@
-# Makefile for homework 3
+# Makefile for homework 4
 
 # Name of output file
 OUTPUT_CLIENT = client
 OUTPUT_SERVER = server
 
 # List file .c
-SRC_CLIENT = UDP_Client/client.c
-SRC_SERVER = UDP_Server/server.c
-
-# List file .h
-HEADERS = UDP_Server/headers/domain.h UDP_Server/headers/ip.h
+SRC_CLIENT = TCP_Client/client.c
+SRC_SERVER = TCP_Server/server.c
 
 all: $(OUTPUT_CLIENT) $(OUTPUT_SERVER)
 
@@ -22,9 +19,9 @@ CFLAGS = -I./ -lm
 # Rules for compiler
 $(OUTPUT_CLIENT): $(SRC_CLIENT) 
 	$(CC) -o $(OUTPUT_CLIENT) $(SRC_CLIENT) $(CFLAGS)
-$(OUTPUT_SERVER): $(SRC_SERVER) $(HEADERS)
+$(OUTPUT_SERVER): $(SRC_SERVER)
 	$(CC) -o $(OUTPUT_SERVER) $(SRC_SERVER) $(CFLAGS)
 
 # Delete files that are not in the main
 clean:
-	rm -f $(OUTPUT_CLIENT) $(OUTPUT_SERVER)
+	rm -f $(OUTPUT_CLIENT) $(OUTPUT_SERVER) 

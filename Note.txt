@@ -24,6 +24,13 @@
 	+ struct sockaddr_in: 
 	
 - Lecture 4:
+	+ socket(domain, type, protocol) : tao socket
+		socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP); // Tạo socket UDP
+	+ bind(): gan dia chi voi socket
+	+ listen(): chuyển socket sang trạng thái chờ kết nối
+	+ accept(): chấp nhận kết nối đang chờ trong hàng đợi
+	+ send(): truyền dữ liệu trên socket
+	
 	+ recvfrom(): là hàm thông thường
 	+ 1 UDP socket có thể nhận nhiều socket từ client
 	

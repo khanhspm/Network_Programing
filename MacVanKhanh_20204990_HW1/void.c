@@ -53,7 +53,7 @@ int checkLogin(node head, char username[]){
  * @param status: result of activity
 */
 void saveLog(int choose, char *string_input, char *status){
-    time_t rawtime; //Change to Local Timezone
+   time_t rawtime; //Change to Local Timezone
    struct tm *info;
    char buffer[20];
    time( &rawtime ); //Get current time and save to rawtime
