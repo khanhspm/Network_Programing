@@ -1,0 +1,178 @@
+[11/11/2023 16:11:02] $ 127.0.0.1 : 50912 $   $ +OK Welcome to file server
+[11/11/2023 16:11:02] $ 127.0.0.1 : 50912 $   $ +OK Please send file
+[11/11/2023 16:11:24] $ 127.0.0.1 : 50912 $  $ -ERR File Not Found
+[11/11/2023 16:11:24] $ 127.0.0.1 : 50912 $   $ +OK Please send file
+[11/11/2023 16:13:05] $ 127.0.0.1 : 59258 $   $ +OK Welcome to file server
+[11/11/2023 16:13:05] $ 127.0.0.1 : 59258 $   $ +OK Please send file
+[11/11/2023 16:13:12] $ 127.0.0.1 : 59258 $  $ -ERR File Not Found
+[11/11/2023 16:13:12] $ 127.0.0.1 : 59258 $   $ +OK Please send file
+[11/11/2023 16:13:16] $ 127.0.0.1 : 53272 $   $ +OK Welcome to file server
+[11/11/2023 16:13:16] $ 127.0.0.1 : 53272 $   $ +OK Please send file
+[11/11/2023 16:16:58] $ 127.0.0.1 : 35318 $   $ +OK Welcome to file server
+[11/11/2023 16:16:58] $ 127.0.0.1 : 35318 $   $ +OK Please send file
+[11/11/2023 16:17:09] $ 127.0.0.1 : 35318 $ File Not Found $ -ERR File Not Found
+[11/11/2023 16:17:09] $ 127.0.0.1 : 35318 $   $ +OK Please send file
+[11/11/2023 16:17:12] $ 127.0.0.1 : 46238 $   $ +OK Welcome to file server
+[11/11/2023 16:17:12] $ 127.0.0.1 : 46238 $   $ +OK Please send file
+[11/11/2023 16:22:16] $ 127.0.0.1 : 38184 $   $ +OK Welcome to file server
+[11/11/2023 16:22:16] $ 127.0.0.1 : 38184 $   $ +OK Please send file
+[11/11/2023 16:22:21] $ 127.0.0.1 : 38184 $ File Not Found $ -ERR File Not Found
+[11/11/2023 16:22:21] $ 127.0.0.1 : 38184 $   $ +OK Please send file
+[11/11/2023 16:23:13] $ 127.0.0.1 : 58328 $   $ +OK Welcome to file server
+[11/11/2023 16:23:13] $ 127.0.0.1 : 58328 $   $ +OK Please send file
+[11/11/2023 16:23:41] $ 127.0.0.1 : 32792 $   $ +OK Welcome to file server
+[11/11/2023 16:23:41] $ 127.0.0.1 : 32792 $   $ +OK Please send file
+[11/11/2023 16:23:47] $ 127.0.0.1 : 32792 $ File Not Found $ -ERR File Not Found
+[11/11/2023 16:23:47] $ 127.0.0.1 : 32792 $   $ +OK Please send file
+[11/11/2023 16:25:35] $ 127.0.0.1 : 40734 $   $ +OK Welcome to file server
+[11/11/2023 16:25:35] $ 127.0.0.1 : 40734 $   $ +OK Please send file
+[11/11/2023 16:25:42] $ 127.0.0.1 : 40734 $ File Not Found $ -ERR File Not Found
+[11/11/2023 16:25:42] $ 127.0.0.1 : 40734 $   $ +OK Please send file
+[11/11/2023 16:25:45] $ 127.0.0.1 : 45818 $   $ +OK Welcome to file server
+[11/11/2023 16:25:45] $ 127.0.0.1 : 45818 $   $ +OK Please send file
+[11/11/2023 17:35:16] $ 127.0.0.1 : 36134 $   $ +OK Welcome to file server
+[11/11/2023 17:35:16] $ 127.0.0.1 : 36134 $   $ +OK Please send file
+[11/11/2023 17:36:40] $ 127.0.0.1 : 45214 $   $ +OK Welcome to file server
+[11/11/2023 17:36:40] $ 127.0.0.1 : 45214 $   $ +OK Please send file
+[11/11/2023 17:36:58] $ 127.0.0.1 : 38888 $   $ +OK Welcome to file server
+[11/11/2023 17:36:58] $ 127.0.0.1 : 38888 $   $ +OK Please send file
+[11/11/2023 17:37:22] $ 127.0.0.1 : 38888 $ File Not Found $ -ERR File Not Found
+[11/11/2023 17:37:22] $ 127.0.0.1 : 38888 $   $ +OK Please send file
+[11/11/2023 17:37:25] $ 127.0.0.1 : 41702 $   $ +OK Welcome to file server
+[11/11/2023 17:37:25] $ 127.0.0.1 : 41702 $   $ +OK Please send file
+[11/11/2023 17:41:33] $ 127.0.0.1 : 44204 $   $ +OK Welcome to file server
+[11/11/2023 17:41:33] $ 127.0.0.1 : 44204 $   $ +OK Please send file
+[11/11/2023 17:42:21] $ 127.0.0.1 : 50154 $   $ +OK Welcome to file server
+[11/11/2023 17:42:21] $ 127.0.0.1 : 50154 $   $ +OK Please send file
+[11/11/2023 17:42:29] $ 127.0.0.1 : 50154 $ File Not Found $ -ERR File Not Found
+[11/11/2023 17:42:29] $ 127.0.0.1 : 50154 $   $ +OK Please send file
+[11/11/2023 20:26:13] $ 127.0.0.1 : 57732 $   $ +OK Welcome to file server
+[11/11/2023 20:26:13] $ 127.0.0.1 : 57732 $   $ +OK Please send file
+[11/11/2023 20:26:28] $ 127.0.0.1 : 59594 $   $ +OK Welcome to file server
+[11/11/2023 20:26:28] $ 127.0.0.1 : 59594 $   $ +OK Please send file
+[11/11/2023 20:26:38] $ 127.0.0.1 : 59594 $ File Not Found $ -ERR File Not Found
+[11/11/2023 20:26:38] $ 127.0.0.1 : 59594 $   $ +OK Please send file
+[11/11/2023 20:33:42] $ 127.0.0.1 : 55096 $   $ +OK Welcome to file server
+[11/11/2023 20:33:42] $ 127.0.0.1 : 55096 $   $ +OK Please send file
+[11/11/2023 20:34:03] $ 127.0.0.1 : 36388 $   $ +OK Welcome to file server
+[11/11/2023 20:34:03] $ 127.0.0.1 : 36388 $   $ +OK Please send file
+[11/11/2023 20:40:17] $ 127.0.0.1 : 41308 $   $ +OK Welcome to file server
+[11/11/2023 20:40:17] $ 127.0.0.1 : 41308 $   $ +OK Please send file
+[11/11/2023 20:40:33] $ 127.0.0.1 : 39268 $   $ +OK Welcome to file server
+[11/11/2023 20:40:33] $ 127.0.0.1 : 39268 $   $ +OK Please send file
+[11/11/2023 20:40:39] $ 127.0.0.1 : 39268 $ File Not Found $ -ERR File Not Found
+[11/11/2023 20:40:39] $ 127.0.0.1 : 39268 $   $ +OK Please send file
+[11/11/2023 20:49:30] $ 127.0.0.1 : 48588 $   $ +OK Welcome to file server
+[11/11/2023 20:49:30] $ 127.0.0.1 : 48588 $   $ +OK Please send file
+[11/11/2023 20:49:36] $ 127.0.0.1 : 48588 $ File Not Found $ -ERR File Not Found
+[11/11/2023 20:49:36] $ 127.0.0.1 : 48588 $   $ +OK Please send file
+[11/11/2023 21:06:30] $ 127.0.0.1 : 34822 $   $ +OK Welcome to file server
+[11/11/2023 21:06:30] $ 127.0.0.1 : 34822 $   $ +OK Please send file
+[11/11/2023 21:07:03] $ 127.0.0.1 : 56648 $   $ +OK Welcome to file server
+[11/11/2023 21:07:03] $ 127.0.0.1 : 56648 $   $ +OK Please send file
+[11/11/2023 21:09:40] $ 127.0.0.1 : 53350 $   $ +OK Welcome to file server
+[11/11/2023 21:09:40] $ 127.0.0.1 : 53350 $   $ +OK Please send file
+[11/11/2023 21:10:04] $ 127.0.0.1 : 49496 $   $ +OK Welcome to file server
+[11/11/2023 21:10:04] $ 127.0.0.1 : 49496 $   $ +OK Please send file
+[11/11/2023 21:17:34] $ 127.0.0.1 : 47946 $   $ +OK Welcome to file server
+[11/11/2023 21:17:34] $ 127.0.0.1 : 47946 $   $ +OK Please send file
+[11/11/2023 21:18:36] $ 127.0.0.1 : 43130 $   $ +OK Welcome to file server
+[11/11/2023 21:18:36] $ 127.0.0.1 : 43130 $   $ +OK Please send file
+[11/11/2023 21:18:42] $ 127.0.0.1 : 43130 $ UPLD test.txt 45
+ $ +OK Successful upload
+[11/11/2023 21:18:42] $ 127.0.0.1 : 43130 $   $ +OK Please send file
+[11/11/2023 21:18:58] $ 127.0.0.1 : 43130 $ UPLD test.txt 45
+ $ +OK Successful upload
+[11/11/2023 21:18:58] $ 127.0.0.1 : 43130 $   $ +OK Please send file
+[11/11/2023 21:19:37] $ 127.0.0.1 : 46632 $   $ +OK Welcome to file server
+[11/11/2023 21:19:37] $ 127.0.0.1 : 46632 $   $ +OK Please send file
+[11/11/2023 21:19:45] $ 127.0.0.1 : 46632 $ UPLD ttt.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:19:45] $ 127.0.0.1 : 46632 $   $ +OK Please send file
+[11/11/2023 21:27:27] $ 127.0.0.1 : 59084 $   $ +OK Welcome to file server
+[11/11/2023 21:27:27] $ 127.0.0.1 : 59084 $   $ +OK Please send file
+[11/11/2023 21:27:33] $ 127.0.0.1 : 59084 $ UPLD ttt.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:27:33] $ 127.0.0.1 : 59084 $   $ +OK Please send file
+[11/11/2023 21:29:53] $ 127.0.0.1 : 55048 $   $ +OK Welcome to file server
+[11/11/2023 21:29:53] $ 127.0.0.1 : 55048 $   $ +OK Please send file
+[11/11/2023 21:29:58] $ 127.0.0.1 : 55048 $ UPLD hhb.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:29:58] $ 127.0.0.1 : 55048 $   $ +OK Please send file
+[11/11/2023 21:34:09] $ 127.0.0.1 : 37018 $   $ +OK Welcome to file server
+[11/11/2023 21:34:09] $ 127.0.0.1 : 37018 $   $ +OK Please send file
+[11/11/2023 21:34:15] $ 127.0.0.1 : 37018 $ UPLD ttt.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:34:15] $ 127.0.0.1 : 37018 $   $ +OK Please send file
+[11/11/2023 21:34:42] $ 127.0.0.1 : 33356 $   $ +OK Welcome to file server
+[11/11/2023 21:34:42] $ 127.0.0.1 : 33356 $   $ +OK Please send file
+[11/11/2023 21:34:50] $ 127.0.0.1 : 33356 $ UPLD Tt.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:34:50] $ 127.0.0.1 : 33356 $   $ +OK Please send file
+[11/11/2023 21:35:36] $ 127.0.0.1 : 42028 $   $ +OK Welcome to file server
+[11/11/2023 21:35:36] $ 127.0.0.1 : 42028 $   $ +OK Please send file
+[11/11/2023 21:35:43] $ 127.0.0.1 : 42028 $ UPLD ttt.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:35:43] $ 127.0.0.1 : 42028 $   $ +OK Please send file
+[11/11/2023 21:36:03] $ 127.0.0.1 : 47128 $   $ +OK Welcome to file server
+[11/11/2023 21:36:03] $ 127.0.0.1 : 47128 $   $ +OK Please send file
+[11/11/2023 21:36:08] $ 127.0.0.1 : 47128 $ UPLD tyy.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:36:08] $ 127.0.0.1 : 47128 $   $ +OK Please send file
+[11/11/2023 21:43:35] $ 127.0.0.1 : 38470 $   $ +OK Welcome to file server
+[11/11/2023 21:43:35] $ 127.0.0.1 : 38470 $   $ +OK Please send file
+[11/11/2023 21:43:40] $ 127.0.0.1 : 38470 $ UPLD ttt.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:43:40] $ 127.0.0.1 : 38470 $   $ +OK Please send file
+[11/11/2023 21:44:24] $ 127.0.0.1 : 41194 $   $ +OK Welcome to file server
+[11/11/2023 21:44:24] $ 127.0.0.1 : 41194 $   $ +OK Please send file
+[11/11/2023 21:44:30] $ 127.0.0.1 : 41194 $ UPLD u.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:44:30] $ 127.0.0.1 : 41194 $   $ +OK Please send file
+[11/11/2023 21:44:55] $ 127.0.0.1 : 39966 $   $ +OK Welcome to file server
+[11/11/2023 21:44:55] $ 127.0.0.1 : 39966 $   $ +OK Please send file
+[11/11/2023 21:45:08] $ 127.0.0.1 : 35266 $   $ +OK Welcome to file server
+[11/11/2023 21:45:08] $ 127.0.0.1 : 35266 $   $ +OK Please send file
+[11/11/2023 21:45:15] $ 127.0.0.1 : 35266 $ UPLD tds.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:45:15] $ 127.0.0.1 : 35266 $   $ +OK Please send file
+[11/11/2023 21:45:41] $ 127.0.0.1 : 44446 $   $ +OK Welcome to file server
+[11/11/2023 21:45:41] $ 127.0.0.1 : 44446 $   $ +OK Please send file
+[11/11/2023 21:45:45] $ 127.0.0.1 : 44446 $ UPLD jdsf.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:45:45] $ 127.0.0.1 : 44446 $   $ +OK Please send file
+[11/11/2023 21:46:00] $ 127.0.0.1 : 35182 $   $ +OK Welcome to file server
+[11/11/2023 21:46:00] $ 127.0.0.1 : 35182 $   $ +OK Please send file
+[11/11/2023 21:46:04] $ 127.0.0.1 : 35182 $ UPLD fsiye.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:46:04] $ 127.0.0.1 : 35182 $   $ +OK Please send file
+[11/11/2023 21:52:59] $ 127.0.0.1 : 57734 $   $ +OK Welcome to file server
+[11/11/2023 21:52:59] $ 127.0.0.1 : 57734 $   $ +OK Please send file
+[11/11/2023 21:53:04] $ 127.0.0.1 : 57734 $ UPLD tt.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:53:04] $ 127.0.0.1 : 57734 $   $ +OK Please send file
+[11/11/2023 21:53:29] $ 127.0.0.1 : 51580 $   $ +OK Welcome to file server
+[11/11/2023 21:53:29] $ 127.0.0.1 : 51580 $   $ +OK Please send file
+[11/11/2023 21:53:33] $ 127.0.0.1 : 51580 $ UPLD kjsgr.txt 45
+ $ -ERR File Not Found
+[11/11/2023 21:53:33] $ 127.0.0.1 : 51580 $   $ +OK Please send file
+[11/11/2023 21:53:42] $ 127.0.0.1 : 51580 $ UPLD test.txt 45
+ $ +OK Successful upload
+[11/11/2023 21:53:42] $ 127.0.0.1 : 51580 $   $ +OK Please send file
+[11/11/2023 22:12:25] $ 127.0.0.1 : 46822 $   $ +OK Welcome to file server
+[11/11/2023 22:12:25] $ 127.0.0.1 : 46822 $   $ +OK Please send file
+[11/11/2023 22:13:19] $ 127.0.0.1 : 46822 $ UPLD test.txt 45
+ $ +OK Successful upload
+[11/11/2023 22:13:19] $ 127.0.0.1 : 46822 $   $ +OK Please send file
+[11/11/2023 22:13:40] $ 127.0.0.1 : 46822 $ UPLD large_file.txt 11264
+ $ +OK Successful upload
+[11/11/2023 22:13:40] $ 127.0.0.1 : 46822 $   $ +OK Please send file
+[11/11/2023 22:14:01] $ 127.0.0.1 : 46822 $ UPLD test.png 80269
+ $ +OK Successful upload
+[11/11/2023 22:14:01] $ 127.0.0.1 : 46822 $   $ +OK Please send file
+[11/11/2023 22:25:17] $ 127.0.0.1 : 45098 $   $ +OK Welcome to file server
+[11/11/2023 22:25:25] $ 127.0.0.1 : 51952 $   $ +OK Welcome to file server
+[11/11/2023 22:25:25] $ 127.0.0.1 : 51952 $   $ +OK Please send file
+[11/11/2023 22:26:04] $ 127.0.0.1 : 51952 $ UPLD MacVanKhanh_20204990_HW4.zip 5726
+ $ +OK Successful upload
+[11/11/2023 22:26:04] $ 127.0.0.1 : 51952 $   $ +OK Please send file
