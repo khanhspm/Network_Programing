@@ -74,7 +74,7 @@ int main(int argc, char **argv)
 	}
 	
 	//Sequence test
-	strcpy(sBuff, "POST Hello\r\n");
+	strcpy(sBuff, "POST Hello");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret <= 0)
@@ -86,7 +86,7 @@ int main(int argc, char **argv)
 			printf("Sequence test fail!\n");
 	}
 	
-	strcpy(sBuff, "BYE\r\n");
+	strcpy(sBuff, "BYE");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret <= 0)
@@ -99,7 +99,7 @@ int main(int argc, char **argv)
 	}
 	
 	//Function test
-	strcpy(sBuff, "USER ductq\r\n");
+	strcpy(sBuff, "USER ductq");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -111,7 +111,7 @@ int main(int argc, char **argv)
 	else
 		printf("Login test fail!\n");
 
-	strcpy(sBuff, "USER admin\r\n");
+	strcpy(sBuff, "USER admin");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -123,7 +123,7 @@ int main(int argc, char **argv)
 	else
 		printf("Login test fail!\n");
 
-	strcpy(sBuff, "USER tungbt\r\n");
+	strcpy(sBuff, "USER tungbt");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -135,7 +135,7 @@ int main(int argc, char **argv)
 	else
 		printf("Login test fail!\n");
 
-	strcpy(sBuff, "POST Hello\r\n");
+	strcpy(sBuff, "POST Hello");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -147,7 +147,7 @@ int main(int argc, char **argv)
 	else
 		printf("Post message test fail!\n");
 
-	strcpy(sBuff, "BYE\r\n");
+	strcpy(sBuff, "BYE");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -159,7 +159,7 @@ int main(int argc, char **argv)
 	else
 		printf("Logout test fail!\n");
 		
-	strcpy(sBuff, "POST Hello\r\n");
+	strcpy(sBuff, "POST Hello");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret <= 0)
@@ -171,7 +171,7 @@ int main(int argc, char **argv)
 			printf("Sequence test fail!\n");
 	}
 	
-	strcpy(sBuff, "USER tungbt\r\n");
+	strcpy(sBuff, "USER tungbt");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -182,9 +182,8 @@ int main(int argc, char **argv)
 	}
 	else
 		printf("Login test fail!\n");
-		
-	
-	strcpy(sBuff, "BYE\r\n");
+
+	strcpy(sBuff, "BYE");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -197,7 +196,7 @@ int main(int argc, char **argv)
 		printf("Logout test fail!\n");
 			
 	//Syntax test
-	strcpy(sBuff, "USER \r\n");
+	strcpy(sBuff, "USER ");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret <= 0)
@@ -209,7 +208,7 @@ int main(int argc, char **argv)
 			printf("Syntax test fail!\n");
 	}
 
-	strcpy(sBuff, "foo\r\n");
+	strcpy(sBuff, "foo");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret <= 0)
@@ -252,7 +251,7 @@ int main(int argc, char **argv)
 	if (ret > 0)
 		printf("Stream test 2 fail!\n");
 
-	strcpy(sBuff, "\r\n");
+	strcpy(sBuff, "");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret <= 0)
@@ -310,7 +309,7 @@ int main(int argc, char **argv)
 				rBuff[ret] = 0;
 				printf("%s\n", rBuff);
 			}
-			strcpy(sBuff, "USER admin\r\n");
+			strcpy(sBuff, "USER admin");
 			ret = send(clients[i], sBuff, strlen(sBuff), 0);
 			ret = recv(clients[i], rBuff, BUFF_SIZE, 0);
 
@@ -384,7 +383,7 @@ void * worker1(void *arg){
 		printf("Thread 1: %s\n", rBuff);
 	}
 	
-	strcpy(sBuff, "USER tungbt\r\n");
+	strcpy(sBuff, "USER tungbt");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -398,7 +397,7 @@ void * worker1(void *arg){
 	ts.tv_nsec = 10000000;
 	for (int i = 0; i < 5; i++) {
 		nanosleep(&ts, &ts);
-		strcpy(sBuff, "POST Hello. I am tungbt\r\n");
+		strcpy(sBuff, "POST Hello. I am tungbt");
 		ret = send(client, sBuff, strlen(sBuff), 0);
 		ret = recv(client, rBuff, BUFF_SIZE, 0);
 		if (ret > 0) {
@@ -409,7 +408,7 @@ void * worker1(void *arg){
 			printf("Receive on thread 1 failed\n");
 	}
 
-	strcpy(sBuff, "BYE\r\n");
+	strcpy(sBuff, "BYE");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -419,7 +418,7 @@ void * worker1(void *arg){
 	else
 		printf("Receive on thread 1 failed\n");
 
-	strcpy(sBuff, "USER test\r\n");
+	strcpy(sBuff, "USER test");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -431,7 +430,7 @@ void * worker1(void *arg){
 
 	for (int i = 0; i < 5; i++) {
 		nanosleep(&ts, &ts);
-		strcpy(sBuff, "POST Hello. I am test\r\n");
+		strcpy(sBuff, "POST Hello. I am test");
 		ret = send(client, sBuff, strlen(sBuff), 0);
 		ret = recv(client, rBuff, BUFF_SIZE, 0);
 		if (ret > 0) {
@@ -486,7 +485,7 @@ void * worker2(void *arg){
 		printf("Thread 2: %s\n", rBuff);
 	}
 
-	strcpy(sBuff, "USER admin\r\n");
+	strcpy(sBuff, "USER admin");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -498,7 +497,7 @@ void * worker2(void *arg){
 
 	for (int i = 0; i < 10; i++) {
 		nanosleep(&ts, &ts);
-		strcpy(sBuff, "POST Hello. I am admin\r\n");
+		strcpy(sBuff, "POST Hello. I am admin");
 		ret = send(client, sBuff, strlen(sBuff), 0);
 		ret = recv(client, rBuff, BUFF_SIZE, 0);
 
@@ -510,7 +509,7 @@ void * worker2(void *arg){
 			printf("Receive on thread failed\n");
 	}
 
-	strcpy(sBuff, "BYE\r\n");
+	strcpy(sBuff, "BYE");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -520,7 +519,7 @@ void * worker2(void *arg){
 	else
 		printf("Receive on thread failed\n");
 
-	strcpy(sBuff, "USER ductq\r\n");
+	strcpy(sBuff, "USER ductq");
 	ret = send(client, sBuff, strlen(sBuff), 0);
 	ret = recv(client, rBuff, BUFF_SIZE, 0);
 	if (ret > 0) {
@@ -573,7 +572,7 @@ void * worker3(void *arg)
 			printf("Worker 3: %s\n", rBuff);
 		}
 			
-		strcpy(sBuff, "USER admin\r\n");
+		strcpy(sBuff, "USER admin");
 		ret = send(clients[i], sBuff, strlen(sBuff), 0);
 		ret = recv(clients[i], rBuff, BUFF_SIZE, 0);
 
@@ -593,7 +592,7 @@ void * worker3(void *arg)
 	for (int i = 0; i < MAX_NCONNS_PER_THREAD; i++) {
 		int ok = 0;
 		for (int k = 0; k < MAX_NREQUEST; k++) {
-			strcpy(sBuff, "POST Hello. I am admin\r\n");
+			strcpy(sBuff, "POST Hello. I am admin");
 			ret = send(clients[i], sBuff, strlen(sBuff), 0);
 			ret = recv(clients[i], rBuff, BUFF_SIZE, 0);
 			if (ret <= 0)

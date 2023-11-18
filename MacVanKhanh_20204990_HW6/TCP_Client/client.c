@@ -10,6 +10,15 @@
 
 #define BUFFSIZE 1024
 
+void displayMenu(){
+    printf("-----------------------MENU--------------------\n");
+    printf("1. Log in\n");
+    printf("2. Post message\n");
+    printf("3. Logout\n");
+    printf("4. Exit\n");
+    printf("-----------------------------------------------\n");
+}
+
 int main(int argc, char **argv){
 
     if(argc != 3){
@@ -39,18 +48,54 @@ int main(int argc, char **argv){
         exit(EXIT_FAILURE);
     }
 
+    char welcome_message[BUFFSIZE + 1];
+    recv(client_sock, welcome_message, BUFFSIZE, 0);
+    printf("%s\n", welcome_message);
+
     //Step 4: Communicate with server
     while(1){
-        printf("\nEnter message: ");
-        memset(buff, '\0', (strlen(buff)+1));
-        fgets(buff, BUFFSIZE, stdin);
-        msg_len = strlen(buff);
+        char choice[BUFFSIZE + 1];
+        char message[BUFFSIZE + 1];
+        displayMenu();
 
-        if(msg_len == 1){
-            break;
+        printf("\nEnter choice: ");
+        memset(choice, '\0', (strlen(choice) + 1));
+        fgets(choice, BUFFSIZE, stdin);
+        int choice_len = strlen(choice);
+        if(choice_len == 1){
+            exit(EXIT_SUCCESS);
+        }
+        if(choice[choice_len - 1] == '\n'){
+            choice[choice_len - 1] = '\0';
         }
 
-        sent_bytes = send(client_sock, buff, msg_len, 0);
+        memset(message, '\0', (strlen(message)+1));
+
+        if(strcmp(choice, "1") == 0){
+            strcpy(message, "USER ");
+
+            printf("Enter username: ");
+            memset(buff, '\0', (strlen(buff)+1));
+            fgets(buff, BUFFSIZE, stdin);
+
+            strcat(message, buff);
+        }else if(strcmp(choice, "2") == 0){
+            strcpy(message, "POST ");
+
+            printf("Enter message: ");
+            memset(buff, '\0', (strlen(buff)+1));
+            fgets(buff, BUFFSIZE, stdin);
+
+            strcat(message, buff);
+        }else if(strcmp(choice, "3") == 0){
+            strcpy(message, "BYE ");
+        }else if(strcmp(choice, "4") == 0){
+            exit(1);
+        }else{
+            strcpy(message, "ERROR ");
+        }
+
+        sent_bytes = send(client_sock, message, strlen(message), 0);
         if(sent_bytes < 0){
             perror("Error: ");
         }

@@ -12,6 +12,9 @@
 #define BACKLOG 20  // Number of allowed connections
 #define BUFF_SIZE 1024
 
+char *list_account_logined[BACKLOG];  // List of loggined accounts
+int total_account_logined = 0; // Number of loggined accounts
+
 /**
  * @function checkLogin: checking account exist and is bannedned.
  * 
@@ -23,6 +26,15 @@
  *          2 if account exist and is not bannedned.
 */
 int checkLogin(node head, char username[]){
+
+    // Check username have loggined in different address or yet
+    if(total_account_logined != 0){
+        for(int i = 0; i < total_account_logined; i++){
+            if(strcmp(list_account_logined[i], username) == 0){
+                return 3;
+            }
+        }
+    }
     int check = 0;
 	if(checkEmptyList(head)){
         return 0;
@@ -52,9 +64,11 @@ int checkLogin(node head, char username[]){
  */
 char *checkPost(int status){
     if(status == 1){
-        return "120 - Successful post!!";
+        printf("120\n");
+        return "Successful post!!";
     }else{
-        return "221 - You have not logged in yet!!";
+        printf("221\n");
+        return "You have not logged in yet!!";
     }
 }
 
@@ -64,16 +78,30 @@ char *checkPost(int status){
  * @param status : loggin status
  * @return char* 
  */
-char *checkLogout(int status){
-    if(status == 1){
-        status = 0;
-        return "130 - Successfully logged out!!";
+char *checkLogout(int *status, char username[]){
+    if(*status == 0){
+        printf("221\n");
+        return "You have not logged in yet!!";
     }else{
-        return "221 - You have not logged in yet!!";
+        *status = 0;
+
+        // Remove username from list of logged in accounts
+        if(total_account_logined != 0){
+            for(int i = 0; i < total_account_logined; i++){
+                if(strcmp(list_account_logined[i], username) == 0){
+                    for(int j = i; j < total_account_logined - 1; j++){
+                        strcpy(list_account_logined[j], list_account_logined[j+1]);
+                    }
+                    total_account_logined--;
+                }
+            }
+        }
+        printf("130\n");
+        return "Successfully logged out!!";
     }
 }
 
-// Function to receive and echo a message to the client
+// Function to receive request from client then reply to the client and echo code result 
 void *echo(void *);
 
 int main(int argc, char **argv){
@@ -129,8 +157,11 @@ int main(int argc, char **argv){
 }
 
 void *echo(void* arg) {
+
+    printf("100\n");
+
+    // Get data
     node h = NULL;
-    user x;
     char buf[BUFF_SIZE]; // initialize the string variable to read file
     FILE *fp;
     fp = fopen("TCP_Server/account.txt", "r");
@@ -140,6 +171,7 @@ void *echo(void* arg) {
         exit(EXIT_FAILURE);
     }
     while(fgets(buf, 255, fp) != NULL){
+        user x;
         if(sscanf(buf, "%s %d", x.username, &x.banned) == 2){
         	addNode(&h, x);
 		}
@@ -148,11 +180,9 @@ void *echo(void* arg) {
     fclose(fp);
     if(h == NULL) {
         printf("Can not get data!!\n");
+        exit(EXIT_FAILURE);
     }
-    while(h != NULL) {
-        printf("%s\n", x.username);
-        h = h->next;
-    }
+
     int connfd = *((int*) arg);
     int sent_bytes, received_bytes;
     char buff[BUFF_SIZE];
@@ -160,6 +190,9 @@ void *echo(void* arg) {
     free(arg);  
     pthread_detach(pthread_self());
 
+    int send_wel = send(connfd, "Connected successfully!!", strlen("Connected successfully!!"), 0);
+
+    char username_input[BUFF_SIZE];
     int status = 0;
 
     while(1){
@@ -177,26 +210,36 @@ void *echo(void* arg) {
         strtok(buff, " "); // get TYPE request
         if(strcmp(buff, "USER") == 0){
             strcpy(string, buff_cpy + 5);
-            printf("%s\n", string);
             if(status == 1){
-                strcpy(buff, "213 - You have already logged in!!");
+                printf("214\n");
+                strcpy(buff, "You have already logged in!!");
             }else if(status == 0){
                 if(checkLogin(h, string) == 0){
-                    strcpy(buff, "212 - Account does not exist!!");
+                    printf("212\n");
+                    strcpy(buff, "Account does not exist");
                 }else if(checkLogin(h, string) == 1){
-                    strcpy(buff, "211 - Account is banned!!");
+                    printf("211\n");
+                    strcpy(buff, "Account is banned!!");
                 }else if(checkLogin(h, string) == 2){
                     status = 1;
-                    strcpy(buff, "110 - Account is already in use!!");
+                    strcpy(username_input, string);
+                    list_account_logined[total_account_logined] = string;
+                    total_account_logined++;
+                    printf("110\n");
+                    strcpy(buff, "Login successfully!!");
+                }else if(checkLogin(h, string) == 3){
+                    printf("213\n");
+                    strcpy(buff, "Account is being used in different client!!");
                 }
             }
             
         }else if(strcmp(buff, "POST") == 0){
             strcpy(buff, checkPost(status));
         }else if(strcmp(buff, "BYE") == 0){
-            strcpy(buff, checkLogout(status));
+            strcpy(buff, checkLogout(&status, username_input));
         }else{
-            strcpy(buff, "300 - Your message was not accepted!!");
+            printf("300\n");
+            strcpy(buff, "Your message was not accepted!!");
         }
         sent_bytes = send(connfd, buff, strlen(buff), 0);
         if (sent_bytes < 0) {
@@ -204,6 +247,8 @@ void *echo(void* arg) {
         }
     }
     }
+
+    checkLogout(&status, username_input);
 
     close(connfd);
 }

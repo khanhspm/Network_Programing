@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/khanhspm/Documents/Network_Programing/MacVanKhanh_20204990_HW6/TCP_Server",
+      "program": "/Users/khanhspm/Documents/Network_Programing/MacVanKhanh_20204990_HW6/TCP_Server/build/Debug/outDebug"
+    }
+  ]
+}
